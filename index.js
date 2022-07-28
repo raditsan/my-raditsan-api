@@ -2,12 +2,12 @@ const rateLimit = require('express-rate-limit')
 const express = require('express')
 const app = express()
 
-const port = 3000
 const limiter = rateLimit({
     windowMs: 1000 * 60,
     max: 6,
     standardHeaders: true,
     legacyHeaders: false,
+    message: "cuma boleh 6 request dalam 1 menit"
 })
 
 app.use(limiter);
