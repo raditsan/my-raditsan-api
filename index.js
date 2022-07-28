@@ -14,6 +14,7 @@ app.use(limiter);
 app.get('/', (req, res) => {
     res.send('Hello World!')
 })
+app.get('/ip', (request, response) => response.send(request.ip))
 
 const server = app.listen(process.env.PORT || 5000, () => {
     const port = server.address().port;
